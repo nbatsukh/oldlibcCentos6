@@ -2,12 +2,12 @@
 
 setup_go(){
     echo "APP_HOME is: $APP_HOME"
-    cat > /etc/environment<<++
-export GOROOT=/usr/lib/golang
-export GOPATH=/go
-export PATH=\${PATH}:\${GOPATH}/bin:\${GOROOT}/bin
+    cat >> /root/.bash_profile <<++
+GOROOT=/usr/lib/golang
+GOPATH=/go
+PATH=\${PATH}:\${GOPATH}/bin:\${GOROOT}/bin
 ++
-    . /etc/environment
+    . ~/.bash_profile
     rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && \
     yum install -y golang
 }
