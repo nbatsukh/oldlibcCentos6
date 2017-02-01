@@ -8,7 +8,7 @@ RUN mkdir -p /opt/ruby-2.2.3/ && \
 
 ENV PATH /opt/ruby-2.2.3/bin:${PATH}
 
-RUN gem install rake os test-unit --no-ri --no-rdoc
+RUN gem install os test-unit --no-ri --no-rdoc
 RUN gem update --system --no-ri --no-rdoc
 
 # GO
