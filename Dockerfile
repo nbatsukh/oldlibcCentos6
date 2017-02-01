@@ -19,8 +19,6 @@ ENV GOROOT   /usr/lib/golang
 ENV GOPATH   /go
 ENV PATH ${PATH}:${GOPATH}
 
-RUN go get gopkg.in/hypersleep/easyssh.v0
-
 # SSH
 RUN yum install -y openssh-server
 RUN yum install -y openssh-clients
