@@ -13,7 +13,7 @@ RUN gem update --system --no-ri --no-rdoc
 
 # GO
 RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && \
-    yum install -y golang
+    yum install -y git golang
 
 ENV GOROOT   /usr/lib/golang
 ENV GOPATH   /go
