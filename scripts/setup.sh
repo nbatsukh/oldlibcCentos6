@@ -1,13 +1,6 @@
 #!/usr/bin/env sh
 
 setup_go(){
-    echo "APP_HOME is: $APP_HOME"
-    cat >> /root/.bash_profile <<++
-GOROOT=/usr/lib/golang
-GOPATH=/go
-PATH=\${PATH}:\${GOPATH}/bin:\${GOROOT}/bin
-++
-    . ~/.bash_profile
     rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && \
     yum install -y golang
 }
@@ -16,9 +9,9 @@ setup_tools(){
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     echo 'export rvm_prefix="$HOME"' > /root/.rvmrc
     echo 'export rvm_path="$HOME/.rvm"' >> /root/.rvmrc
-    curl -sSL https://get.rvm.io | rvm_path=/root/.rvm bash -s stable --ruby=1.9.3 --with-gems="rake,os,test-unit"
+    curl -sSL https://get.rvm.io | rvm_path=/root/.rvm bash -s stable --ruby=2.3.1 --with-gems="rake,os,test-unit"
     cat /root/.rvmrc
-    /bin/bash --login -c  'rvm list && rvm --default use 1.9.3'
+    /bin/bash --login -c  'rvm list && rvm --default use 2.3.1'
 }
 
 setup_ssh() {
