@@ -1,7 +1,5 @@
 FROM centos:centos6
 
-ENV APP_HOME /code
-
 # RUBY
 RUN mkdir -p /opt/ruby-2.2.3/ && \
     curl -s https://s3.amazonaws.com/pkgr-buildpack-ruby/current/centos-6/ruby-2.2.3.tgz | tar xzC /opt/ruby-2.2.3/
