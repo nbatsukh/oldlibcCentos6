@@ -17,9 +17,10 @@ RUN mkdir -p /go && yum install -y openssh-server openssh-clients git golang
 ENV GOROOT="/usr/lib/golang" GOPATH="/go" PATH="${PATH}:${GOPATH}"
 
 COPY scripts/mkgit-centos6.sh .
+RUN echo ${PATH}
 RUN sh mkgit-centos6.sh
 #seems -A option is illegal for CentOS. The key generation is handled by the server itself.
 #generation of new keys is achieved by removing the old keys from /etc/ssh
 RUN service sshd start
 
-ENTRY_POINT service sshd start && tail -f /dev/null
+ENTRYPOINT service sshd start && tail -f /dev/null
