@@ -2,7 +2,7 @@
 # Install the latest version of git on CentOS 6.x
  
 # Install Required Packages
-yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel wget
+yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
 yum install  gcc perl-ExtUtils-MakeMaker
  
 # Uninstall old Git RPM
@@ -10,8 +10,7 @@ yum remove git
  
 # Download and Compile Git Source
 cd /usr/src
-wget https://www.kernel.org/pub/software/scm/git/git-2.4.4.tar.gz
-tar xzf git-2.4.4.tar.gz 
+curl -sSL https://www.kernel.org/pub/software/scm/git/git-2.4.4.tar.gz | tar xzv
  
 cd git-2.4.4
 make prefix=/usr/local/git all
