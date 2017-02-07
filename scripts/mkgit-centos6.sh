@@ -2,7 +2,7 @@
 # Install the latest version of git on CentOS 6.x
  
 # Install Required Packages
-yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel wget
 yum install  gcc perl-ExtUtils-MakeMaker
  
 # Uninstall old Git RPM
