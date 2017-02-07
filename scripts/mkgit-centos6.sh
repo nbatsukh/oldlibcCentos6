@@ -14,7 +14,7 @@ make all doc info && \
 make install install-doc install-html install-info 
 
 # Uninstall old Git RPM
-yum remove git
+yum -y remove git
  
 # Check Git Version
 git --version
