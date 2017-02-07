@@ -12,13 +12,17 @@ RUN gem install os test-unit --no-ri --no-rdoc && \
 
 # SSH & golang & git
 RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-RUN mkdir -p /go && yum install -y openssh-server openssh-clients git golang
+
+RUN mkdir -p /go && yum install -y openssh-server openssh-clients golang
+RUN yum -y groupinstall "Development Tools"
 
 ENV GOROOT="/usr/lib/golang" GOPATH="/go" PATH="${PATH}:${GOPATH}"
 
 COPY scripts/mkgit-centos6.sh .
 RUN echo ${PATH}
 RUN sh mkgit-centos6.sh
+
+
 #seems -A option is illegal for CentOS. The key generation is handled by the server itself.
 #generation of new keys is achieved by removing the old keys from /etc/ssh
 RUN service sshd start
