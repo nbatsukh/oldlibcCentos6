@@ -9,7 +9,7 @@ curl -sSL https://www.kernel.org/pub/software/scm/git/git-1.9.1.tar.gz | tar xz
 
 cd git-1.9.1 && \
 make configure && \
-./configure  --prefix=/usr && \
+./configure  --prefix=/usr/local && \
 make all doc info && \
 make install install-doc install-html install-info 
 
