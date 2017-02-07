@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Install the latest version of git on CentOS 6.x
  
+# Uninstall old Git RPM
+yum -y remove git
+
 # Install Required Packages
 yum install dh-autoreconf curl-devel expat-devel gettext-devel openssl-devel perl-devel zlib-devel asciidoc xmlto docbook2X && \
 ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
@@ -13,8 +16,5 @@ make configure && \
 make all doc info && \
 make install install-doc install-html install-info 
 
-# Uninstall old Git RPM
-yum -y remove git
- 
 # Check Git Version
 git --version
