@@ -27,4 +27,4 @@ RUN sh mkgit-centos6.sh
 #generation of new keys is achieved by removing the old keys from /etc/ssh
 RUN service sshd start
 
-ENTRYPOINT service sshd start && tail -f /dev/null
+#ENTRYPOINT service sshd start && tail -f /dev/null
